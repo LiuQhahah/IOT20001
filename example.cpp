@@ -12,24 +12,19 @@ int main(void) {
 	while(true){
 
 	UserH6 LH6;
+
+	//USER的LED灯显示以及循环显示
 	//LH6.LightH6();
 	//LH6.LightAll();
 
-	/*
-	 Gpio* d_pin = NULL;
-		d_pin = new mraa::Gpio(13, true, false);
-		d_pin->dir(mraa::DIR_OUT);
-		d_pin->read();
-
-				d_pin->write(1);
-				sleep(1);
-				d_pin->write(0);
-				sleep(1);*/
-		MKdir mk;
-		mk.mkdir();
+	//将按键的状态0/1记录到txt文件上
+	MKdir mk;
+	mk.mkdir();
+	//将linux上的txt文档传输到Windows上
 	SendFile sf;
 	sf.sendfile();
-	sleep(60);
+	//每60s循环一次，之前设置为1s时，有出错。
+	sleep(1);
 	}
 	return 0;
 }

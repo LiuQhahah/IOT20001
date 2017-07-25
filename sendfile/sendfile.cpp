@@ -11,14 +11,14 @@
 #include "mraa.hpp"
 
 using namespace mraa;
-
 using namespace std;
+
 void SendFile::sendfile(){
+	//调用python文件执行client代码
 	string filename = "/mnt/client.py ";
 	string command = "python  ";
 	command += filename;
 	system(command.c_str());
-	//sleep(10);
 }
 
 
